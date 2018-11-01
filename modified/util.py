@@ -5,6 +5,7 @@ import os
 import pickle
 import nltk.data
 import errno
+from nltk.corpus import stopwords
 
 def count_time(start):
     """
@@ -143,6 +144,8 @@ def mkdir_p(path):
 def preProcessing(input_raw_data_dir_name, processed_data_dir_name):
 	# for suffix stripping
 	ps = PorterStemmer()
+
+	stop_words = set(stopwords.words('english')) 
 	
 	# to get only english alphabets
 	tokenizer = RegexpTokenizer(r'[a-zA-Z.]+')
@@ -161,10 +164,12 @@ def preProcessing(input_raw_data_dir_name, processed_data_dir_name):
 			for i in f:
 				line = tokenizer.tokenize(i)
 				if line != []:
+					line_ = []
 					for j in range(len(line)):
-						line[j] = ps.stem(line[j])
-					line = ' '.join(line)
-					line += ' '
-					line = line.lower()
-					f_out.write(line)
+						x = line[j].lower()
+						if x not in stop_words:
+							line_.append(ps.stem(x))
+					line_ = ' '.join(line_)
+					line_ += ' '
+					f_out.write(line_)
 		f_out.close()
