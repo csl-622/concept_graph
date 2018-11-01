@@ -16,8 +16,8 @@ import os
 if __name__ == '__main__':
 	max_window_size = 5
 	process_num = 5
-	min_count = 1
-	max_vocab_size = 100000
+	min_count = 50
+	max_vocab_size = 200
 	safe_files_number_per_processor = 200
 	start_time = time.time()
 
