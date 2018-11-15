@@ -157,6 +157,7 @@ def preProcessing(input_raw_data_dir_name, processed_data_dir_name):
 
 	files = os.listdir(input_raw_data_dir_name)
 	for file_name in files:
+		print('reading ', file_name)
 		output_file = os.path.join(processed_data_dir_name, file_name)
 		file_name = os.path.join(input_raw_data_dir_name, file_name)
 		f_out = open(output_file,'w',encoding="utf8")
