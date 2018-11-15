@@ -15,6 +15,8 @@ while True:
 		break
 	if len(line) == 3:
 		Edges.append((int(line[2]),(int(line[0]),int(line[1]))))
+	else:
+		break
 
 
 Edges = sorted(Edges)
