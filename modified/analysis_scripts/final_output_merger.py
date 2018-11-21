@@ -1,12 +1,12 @@
 import os
 import pickle
 
-with open('dict12.txt','rb') as handle:
+with open('dict12.pickle','rb') as handle:
 	Dictionary = pickle.load(handle)
 
 print('Dictionary reading done!')
 
-with open('graph12.txt','rb') as handle:
+with open('graph12.pickle','rb') as handle:
 	Edges = pickle.load(handle)
 
 print('Edges reading done!')
