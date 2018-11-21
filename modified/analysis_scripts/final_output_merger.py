@@ -52,3 +52,15 @@ with open('graph.pickle','wb') as handle:
 print('Graph dumped!')
 
 print('Dumping done!')
+
+with open('dict.txt', 'a') as out:
+	for key, val in Dictionary.items():
+		out.write(key + '\t' + str(val) + '\n')
+
+print('dict.txt done')
+
+with open('graph.txt', 'a') as out:
+	for key, val in Edges.items():
+		out.write(key + '\t' + str(val) + '\n')
+
+print('graph.txt done')
