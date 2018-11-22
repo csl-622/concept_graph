@@ -61,6 +61,6 @@ print('dict.txt done')
 
 with open('graph.txt', 'a') as out:
 	for key, val in Edges.items():
-		out.write(key + '\t' + str(val) + '\n')
+		out.write(str(key[0]) + '\t' + str(key[1]) + '\t' + str(val) + '\n')
 
 print('graph.txt done')
